@@ -56,8 +56,8 @@ M.nvimtree = {
   },
 
   view = {
-    side = "right"
-  }
+    side = "right",
+  },
 }
 
 return M

@@ -4,7 +4,6 @@ local opts = { noremap = true, silent = true, nowait = true }
 
 M.general = {
   n = {
-    ["<C-b>"] = { "<cmd>NvimTreeToggle<CR>", "Toggle nvimtree" },
     ["<A-p>"] = { "<cmd>Copilot<CR>", "Get Copilot suggestions" },
     ["<A-Up>"] = { ":resize -2<CR>", "", opts = opts },
     ["<A-Down>"] = { "<cmd>resize +2<CR>", "", opts = opts },
