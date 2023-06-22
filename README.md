@@ -24,7 +24,7 @@ First, clone the [`NvChad`](https://github.com/NvChad/NvChad) repository
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 ```
 
-then clone [My NvChad Configuration](https://github.com/SushiWaUmai/nvchad-config/) to `to ~/.config/nvim/custom`
+then clone my [`nvchad-config`](https://github.com/SushiWaUmai/nvchad-config/) to `~/.config/nvim/custom`
 ```bash
 git clone https://github.com/SushiWaUmai/nvchad-config ~/.config/nvim/lua/custom
 ```
