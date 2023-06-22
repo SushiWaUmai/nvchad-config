@@ -136,6 +136,10 @@ local plugins = {
   {
     "iamcco/markdown-preview.nvim",
     event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      vim.fn["mkdp#util#install"]()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
   },
 
   {
