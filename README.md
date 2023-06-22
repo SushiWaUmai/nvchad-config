@@ -37,4 +37,4 @@ git clone https://github.com/SushiWaUmai/nvchad-config ~/.config/nvim/lua/custom
 Use the API key from [here](https://wakatime.com/api-key)
 
 ## License
-This project is [MIT](./LICENSE) licensed.
+This project is licensed under the [GNU General Public License v3.0](./LICENSE).
