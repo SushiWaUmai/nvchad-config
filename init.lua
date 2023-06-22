@@ -2,7 +2,7 @@ local options = {
   backup = false,
   clipboard = "unnamedplus",
   cmdheight = 2,
-  conceallevel = 0, colorcolumn = "120",
+  conceallevel = 0,
   fileencoding = "utf-8",
   ignorecase = true,
   mouse = "a",
@@ -46,6 +46,21 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
+local function open_nvim_tree(data)
+  -- buffer is a directory
+  local directory = vim.fn.isdirectory(data.file) == 1
+
+  if not directory then
+    return
+  end
+
+  -- change to the directory
+  vim.cmd.cd(data.file)
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
   pattern = "*",
@@ -59,3 +74,5 @@ autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+autocmd({ "VimEnter" }, { callback = open_nvim_tree })
