@@ -15,6 +15,9 @@ local plugins = {
           require "custom.configs.null-ls"
         end,
       },
+      {
+        "Hoffs/omnisharp-extended-lsp.nvim",
+      },
     },
     config = function()
       require "plugins.configs.lspconfig"
