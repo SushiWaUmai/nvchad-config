@@ -175,6 +175,10 @@ local plugins = {
     "mg979/vim-visual-multi",
     lazy = false,
   },
+
+  {
+    "andweeb/presence.nvim",
+  },
 }
 
 return plugins
