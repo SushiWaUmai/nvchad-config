@@ -16,9 +16,6 @@ local function setup_language_server(server)
     flags = {
       debounce_text_changes = 150,
     },
-    capabilities = {
-      offsetEncoding = "utf-8",
-    },
   }
 
   local lang_opts_status_ok, lang_opts = pcall(require, "custom.configs.lsp." .. server)
