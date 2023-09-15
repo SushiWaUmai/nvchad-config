@@ -4,11 +4,19 @@ return {
   root_dir = util.root_pattern "Cargo.toml",
   settings = {
     ["rust-analyzer"] = {
-      diagnostics = {
-        enable = false,
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
       },
       cargo = {
-        allFeatures = true,
+        buildScripts = {
+          enable = true,
+        },
+      },
+      procMacro = {
+        enable = true,
       },
     },
   },
