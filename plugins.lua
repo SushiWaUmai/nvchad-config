@@ -170,28 +170,6 @@ local plugins = {
 
   {
     "simrat39/rust-tools.nvim",
-    init = function()
-      local rt = require "rust-tools"
-      local opts = {
-        dap = {
-          adapter = {
-            type = "executable",
-            command = "rust-lldb",
-          },
-        },
-
-        server = {
-          on_attach = function(_, bufnr)
-            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-          end,
-        },
-      }
-      rt.setup(opts)
-      vim.cmd [[
-        set signcolumn=yes
-        autocmd CursorHold * lua vim.diagnostic.open_float({border="single"}, { focusable = false })
-      ]]
-    end,
   },
 
   {
@@ -229,11 +207,6 @@ local plugins = {
   -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
   {
     "mg979/vim-visual-multi",
-    lazy = false,
-  },
-
-  {
-    "andweeb/presence.nvim",
     lazy = false,
   },
 }

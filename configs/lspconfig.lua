@@ -4,6 +4,7 @@ local lsp_inlayhints = require "lsp-inlayhints"
 local mason_lspconfig = require "mason-lspconfig"
 
 local lspconfig = require "lspconfig"
+local rt = require "rust-tools"
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local function setup_language_server(server)
@@ -25,7 +26,12 @@ local function setup_language_server(server)
 
   opts = vim.tbl_deep_extend("force", { capabilities = capabilities }, opts)
 
-  lspconfig[server].setup(opts)
+  if server == "rust_analyzer" then
+    rt.setup(opts)
+    lspconfig[server].setup(opts)
+  else
+    lspconfig[server].setup(opts)
+  end
 end
 
 for _, server in pairs(mason_lspconfig.get_installed_servers()) do
@@ -33,3 +39,5 @@ for _, server in pairs(mason_lspconfig.get_installed_servers()) do
     setup_language_server(server)
   end
 end
+
+setup_language_server "gdscript"
