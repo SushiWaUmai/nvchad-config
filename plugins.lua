@@ -202,6 +202,20 @@ local plugins = {
     end,
   },
 
+  {
+    "lervag/vimtex",
+    ft = { "tex" },
+    init = function()
+      vim.g.tex_flavor = "latex"
+      vim.g.vimtex_quickfix_mode = 0
+      vim.g.vimtex_mappings_enabled = 0
+      vim.g.vimtex_indent_enabled = 0
+
+      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_context_pdf_viewer = "zathura"
+    end,
+  },
+
   -- All NvChad plugins are lazy-loaded by default
   -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
   -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example

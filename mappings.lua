@@ -10,6 +10,10 @@ M.general = {
     ["<A-Left>"] = { "<cmd>vertical resize -2<CR>", "", opts = opts },
     ["<A-Right>"] = { "<cmd>vertical resize +2<CR>", "", opts = opts },
     ["<C-\\>"] = { "<cmd>lua require('nvterm.terminal').toggle('horizontal')<CR>", "Toggle Terminal", opts = opts },
+
+    ["<leader>cc"] = { "<cmd>VimtexCompile<CR>", "VimtexCompile", opts = opts },
+    ["<leader>cv"] = { "<cmd>VimtexView<CR>", "VimtexView", opts = opts },
+    ["<leader>cq"] = { "<cmd>VimtexStop<CR>", "VimtexStop", opts = opts },
   },
   i = {
     ["<C-H>"] = { "<C-W>", "Delete one word", opts = opts },
